@@ -1,0 +1,13 @@
+# Eclipse / IntelliJ / VSCode
+*.class
+*.jar
+*.war
+*.iml
+/.idea/
+/out/
+/target/
+/bin/
+*.log
+
+# Docker
+docker-compose.override.yml
