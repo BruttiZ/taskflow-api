@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#novaTarefa {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#novaTarefa:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#btnAdicionar {
+    padding: 12px 25px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#btnAdicionar:hover {
+    background: #5568d3;
+}
+
+#lista {
+    list-style: none;
+}
+
+.tarefa-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+
+.tarefa-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.tarefa-item.concluida .titulo {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.checkbox-concluir {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.titulo {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-editar,
+.btn-deletar {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.btn-editar {
+    background: #ffc107;
+}
+
+.btn-deletar {
+    background: #dc3545;
+}
+
+.btn-editar:hover,
+.btn-deletar:hover {
+    transform: scale(1.1);
+}
+
+.vazio {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}

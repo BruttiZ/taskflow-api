@@ -9,6 +9,7 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 5s
@@ -23,6 +24,14 @@ services:
       mysql:
         condition: service_healthy
     restart: on-failure
+
+  frontend:
+    image: nginx:alpine
+    container_name: frontend-tarefas
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
 
 volumes:
   mysql_data:
