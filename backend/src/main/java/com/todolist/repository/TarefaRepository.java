@@ -1,9 +1,9 @@
 package com.todolist.repository;
 
-import com.todolist.entity.Tarefa;
+import com.todolist.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
+public interface TarefaRepository extends JpaRepository<Task, Long> {
 }
