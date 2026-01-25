@@ -27,7 +27,7 @@ h1 {
     font-size: 2em;
 }
 
-/* FormulÃ¡rio de adicionar tarefa */
+/* Formulário de adicionar tarefa */
 .add-task-form {
     background: #f8f9fa;
     padding: 20px;
@@ -297,7 +297,7 @@ input[type="datetime-local"], select {
     font-size: 16px;
 }
 
-/* Modal de EdiÃ§Ã£o */
+/* Modal de Edição */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -451,7 +451,7 @@ input[type="datetime-local"], select {
     border-left: 4px solid #dc3545;
 }
 
-/* AnimaÃ§Ãµes */
+/* Animações */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -474,21 +474,158 @@ input[type="datetime-local"], select {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
+    body {
+        padding: 10px;
     }
     
-    .task-options,
+    .container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    
+    .add-task-form {
+        padding: 15px;
+    }
+    
+    #novaTarefa, #descricao {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .task-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .option-group label {
+        font-size: 13px;
+    }
+    
+    input[type="datetime-local"], select {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    #btnAdicionar {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    
+    .filtros {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .filtro-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .tarefa-item {
+        padding: 12px;
+    }
+    
+    .tarefa-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .tarefa-conteudo {
+        width: 100%;
+    }
+    
+    .titulo {
+        font-size: 16px;
+    }
+    
+    .descricao {
+        font-size: 13px;
+    }
+    
+    .info-datas small {
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+    
+    .acoes {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .btn-editar,
+    .btn-deletar {
+        padding: 8px 14px;
+        font-size: 16px;
+    }
+    
+    .modal {
+        width: 95%;
+        padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal h2 {
+        font-size: 1.3em;
+    }
+    
+    .modal input[type="text"],
+    .modal textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
     .modal-options {
         flex-direction: column;
     }
     
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%;
+    }
+    
     .toast {
-        min-width: 250px;
+        min-width: auto;
+        width: calc(100vw - 40px);
+        font-size: 13px;
     }
     
     #toast-container {
         right: 10px;
         left: 10px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .add-task-form {
+        padding: 12px;
+    }
+    
+    .titulo-container {
+        flex-wrap: wrap;
+    }
+    
+    .badge {
+        font-size: 10px;
+        padding: 1px 6px;
     }
 }
