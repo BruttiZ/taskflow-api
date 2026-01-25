@@ -37,6 +37,11 @@ public class TaskController {
     public ResponseEntity<Task> criar(@RequestBody Task task) {
         task.setConcluida(false);
         task.setDataCriacao(LocalDateTime.now());
+        
+        if (task.getPrioridade() == null) {
+            task.setPrioridade("MEDIA");
+        }
+        
         Task novaTarefa = tarefaRepository.save(task);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaTarefa);
     }
@@ -47,7 +52,30 @@ public class TaskController {
         return tarefaRepository.findById(id)
                 .map(task -> {
                     task.setTitulo(taskAtualizada.getTitulo());
+                    
+                    if (taskAtualizada.getDescricao() != null) {
+                        task.setDescricao(taskAtualizada.getDescricao());
+                    }
+                    
+                    if (taskAtualizada.getDataAgendada() != null) {
+                        task.setDataAgendada(taskAtualizada.getDataAgendada());
+                    }
+                    
+                    if (taskAtualizada.getPrioridade() != null) {
+                        task.setPrioridade(taskAtualizada.getPrioridade());
+                    }
+                    
+                    // Se mudou o status de concluída
+                    boolean mudouConclusao = !task.getConcluida().equals(taskAtualizada.getConcluida());
                     task.setConcluida(taskAtualizada.getConcluida());
+                    
+                    if (mudouConclusao && taskAtualizada.getConcluida()) {
+                        task.setDataConclusao(LocalDateTime.now());
+                    } else if (mudouConclusao && !taskAtualizada.getConcluida()) {
+                        task.setDataConclusao(null);
+                    }
+                    
+                    task.setDataAtualizacao(LocalDateTime.now());
                     Task salva = tarefaRepository.save(task);
                     return ResponseEntity.ok(salva);
                 })
