@@ -38,7 +38,6 @@
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
 
-        <!-- HOT RELOAD -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
