@@ -1,0 +1,29 @@
+# --- Java & Maven ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# --- VS Code ---
+.vscode/
+.factorypath
+.project
+.settings/
+.classpath
+
+# --- IntelliJ (caso use no futuro) ---
+.idea/
+*.iml
+out/
+
+# --- Logs e Arquivos Temporários ---
+*.log
+/temp/
+
+# --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+.docker/
