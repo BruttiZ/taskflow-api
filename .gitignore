@@ -27,3 +27,21 @@ Thumbs.db
 
 # --- Docker ---
 .docker/
+ 
+# Environment
+.env
+
+# Frontend
+/frontend/node_modules/
+/frontend/dist/
+
+# Maven wrapper and build
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Docker compose overrides
+docker-compose.override.yml
+
+# IDE specific
+/.idea/
+.vscode/
