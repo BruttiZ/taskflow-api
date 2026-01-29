@@ -4,11 +4,12 @@ services:
     container_name: mysql-tarefas
     environment:
       MYSQL_ROOT_PASSWORD: lgl99VICTOR99@
-      MYSQL_DATABASE: tarefas_db
+      MYSQL_DATABASE: tasks
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 5s
