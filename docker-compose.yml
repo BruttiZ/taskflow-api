@@ -27,6 +27,8 @@ services:
       mysql:
         condition: service_healthy
     restart: on-failure
+    networks:
+      - taskflow_net
 
   frontend:
     image: nginx:alpine
@@ -35,6 +37,12 @@ services:
       - "80:80"
     volumes:
       - ./frontend:/usr/share/nginx/html
+    networks:
+      - taskflow_net
 
 volumes:
   mysql_data:
+
+networks:
+  taskflow_net:
+    driver: bridge
