@@ -11,11 +11,15 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      # removed host bind to ./init.sql because on Windows a directory with this name
+      # causes the MySQL entrypoint to fail (it's treated as a directory). Rely
+      # on MYSQL_DATABASE env to create the DB or add init scripts as files.
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 5s
       retries: 10
+    networks:
+      - taskflow_net
   backend:
     build: ./backend
     container_name: backend-tarefas
